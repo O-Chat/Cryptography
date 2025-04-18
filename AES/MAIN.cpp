@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <cstring>
-#include "AES.h"  // Include your class header
+#include "AES.h"  
 
 using namespace std;
 
@@ -98,7 +98,6 @@ int main(int argc, char* argv[]) {
             decryptedtext.insert(decryptedtext.end(), decryptedBlock.begin(), decryptedBlock.end());
         }
 
-        // Remove PKCS#7 padding
         uint8_t pad = decryptedtext.back();
         if (pad > 0 && pad <= 16) {
             decryptedtext.resize(decryptedtext.size() - pad);
